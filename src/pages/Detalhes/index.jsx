@@ -15,6 +15,8 @@ import ShareButton from '../../components/ShareButton';
 import VideoPlayer from '../../components/VideoPlayer';
 import RecipeCategory from '../../components/RecipeCategory';
 
+import './styles.css';
+
 function Detalhes() {
   const history = useHistory();
   const { pathname } = useLocation();
@@ -51,6 +53,7 @@ function Detalhes() {
 
   const renderIngredients = () => ingredients.map((ingredient, index) => (
     <li
+      className="recipe-ingredient"
       key={ index }
       data-testid={ `${index}-ingredient-name-and-measure` }
     >
@@ -60,14 +63,14 @@ function Detalhes() {
 
   // Lógica do CSS do Carrossel feita com ajuda do Lucas Caribé
   const renderRecommendations = () => (
-    <div className="recommendations" style={ { display: 'flex', overflow: 'auto' } }>
+    <section className="recommendations-section">
       {recommendations.map((recipe, index) => {
         const MAX_RECOMMENDATIONS_CARDS = 6;
         if (index < MAX_RECOMMENDATIONS_CARDS) {
           return <RecommendationCard key={ index } index={ index } recipe={ recipe } />;
         } return null;
       })}
-    </div>
+    </section>
   );
 
   const handleButton = (inProgress, path) => {
@@ -123,32 +126,40 @@ function Detalhes() {
     if (!item[type]) {
       return <span>Carregando...</span>;
     } return (
-      <main>
+      <main className="details-main-container">
         <img
+          className="recipe-img"
           data-testid="recipe-photo"
           src={ item[type][0][`str${property}Thumb`] }
           alt={ item[type][0][`str${property}`] }
           height="300px"
           width="300px"
         />
-        <h1 data-testid="recipe-title">{ item[type][0][`str${property}`] }</h1>
-        <ShareButton
-          path={ path }
-          id={ item[type][0][`id${property}`] }
-          icon={ shareIcon }
-          handleCopy={ handleCopy }
-        />
-        {checkFavorites(item[type][0], type, property)}
-        {isCopied && <p>Link copiado!</p> }
+        <h1
+          className="recipe-title"
+          data-testid="recipe-title"
+        >
+          { item[type][0][`str${property}`] }
+        </h1>
         <RecipeCategory item={ item } type={ type } />
-        {/* <h2 data-testid="recipe-category">
-          { item[type][0].strAlcoholic
-            ? item[type][0].strAlcoholic : item[type][0].strCategory }
-        </h2> */}
-        <ul>
+        <section className="btns-section">
+          <ShareButton
+            path={ path }
+            id={ item[type][0][`id${property}`] }
+            icon={ shareIcon }
+            handleCopy={ handleCopy }
+          />
+          {checkFavorites(item[type][0], type, property)}
+          {isCopied && <p>Link copiado!</p> }
+        </section>
+        <ul className="ingredients-list">
+          <h3>Ingredients</h3>
           {renderIngredients()}
         </ul>
-        <p data-testid="instructions">{item[type][0].strInstructions}</p>
+        <section className="recipe-instructions">
+          <h3>Instructions</h3>
+          <p data-testid="instructions">{item[type][0].strInstructions}</p>
+        </section>
         {type === 'meal'
         && <VideoPlayer item={ item } type={ type } property={ property } />}
         {renderRecommendations()}

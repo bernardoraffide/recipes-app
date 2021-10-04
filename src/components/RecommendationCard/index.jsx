@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 function RecommendationCard({ index, recipe }) {
   return (
     <div
-      style={ { overflow: 'scroll', flexShrink: '0' } }
+      className="recommendation-card"
       key={ index }
       data-testid={ `${index}-recomendation-card` }
     >

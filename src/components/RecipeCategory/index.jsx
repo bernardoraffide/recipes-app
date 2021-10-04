@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 function RecipeCategory({ item, type }) {
   return (
-    <h2 data-testid="recipe-category">
+    <h2 className="recipe-category" data-testid="recipe-category">
       { item[type][0].strAlcoholic
         ? item[type][0].strAlcoholic : item[type][0].strCategory }
     </h2>
