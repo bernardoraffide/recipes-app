@@ -1,8 +1,28 @@
 .search-bar-inputs {
+  display: flex;
   flex-direction: column;
-  padding: 0.5em;
+  margin: 0.3em 0;
+  padding: 0.2em;
 }
 
 .text-input {
-  align-self: stretch;
+  width: 100%;
+}
+
+.radio-btns {
+  display: flex;
+  justify-content: space-around;
+  margin: 0.7em 0;
+}
+
+.radio-btns input {
+  margin-right: 0.2em;
+}
+
+.radio-btns label {
+  margin: 0;
+}
+
+.search-btn {
+  align-self: center;
 }

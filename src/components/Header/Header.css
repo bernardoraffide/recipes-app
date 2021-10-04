@@ -1,4 +1,13 @@
 .header {
   display: flex;
-  justify-content: space-between;
+}
+
+.header button {
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+.page-header {
+  margin: 0 auto;
 }

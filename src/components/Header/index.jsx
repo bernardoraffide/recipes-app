@@ -21,10 +21,10 @@ function Header({ pageTitle, showSearchIcon }) {
         <button type="button" onClick={ () => history.push('/perfil') }>
           <img src={ profileIcon } data-testid="profile-top-btn" alt="profile-icon" />
         </button>
-        <h1 data-testid="page-title">{pageTitle}</h1>
+        <h1 data-testid="page-title" className="page-header">{pageTitle}</h1>
         {showSearchIcon && <SearchIcon onClick={ toggleSearchBar } />}
       </header>
-      {isOpen && <SearchBar />}
+      {isOpen && showSearchIcon && <SearchBar />}
     </section>
   );
 }

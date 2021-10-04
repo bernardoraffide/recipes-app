@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 
 import { useSearch } from '../../context/SearchBarContext';
 
+import SearchRadioBtn from '../SearchRadioBtn';
+
 import './SearchBar.css';
 
 function SearchBar() {
@@ -19,32 +21,24 @@ function SearchBar() {
         onChange={ (e) => setSearchTerm(e.target.value) }
       />
       <div className="radio-btns">
-        <input
-          data-testid="ingredient-search-radio"
-          type="radio"
-          name="radio-search"
-          value="ingredient"
-          onClick={ (e) => setSearchOption(e.target.value) }
+        <SearchRadioBtn
+          label="Ingrediente"
+          searchType="ingredient"
+          setSearchOption={ setSearchOption }
         />
-        Ingrediente
-        <input
-          data-testid="name-search-radio"
-          type="radio"
-          name="radio-search"
-          value="name"
-          onClick={ (e) => setSearchOption(e.target.value) }
+        <SearchRadioBtn
+          label="Nome"
+          searchType="name"
+          setSearchOption={ setSearchOption }
         />
-        Nome
-        <input
-          data-testid="first-letter-search-radio"
-          type="radio"
-          name="radio-search"
-          value="first-letter"
-          onClick={ (e) => setSearchOption(e.target.value) }
+        <SearchRadioBtn
+          label="Primeira letra"
+          searchType="first-letter"
+          setSearchOption={ setSearchOption }
         />
-        Primeira letra
       </div>
       <button
+        className="search-btn"
         data-testid="exec-search-btn"
         type="button"
         onClick={ () => handleSearch(searchTerm, searchOption) }
