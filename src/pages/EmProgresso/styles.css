@@ -1,0 +1,87 @@
+.inprogress-main-container {
+  background-color: rgba(226, 217, 235, 0.514);
+  padding: 0.5em;
+}
+
+.recipe-img {
+  border: 1px solid black;
+  border-radius: 5%;
+  width: 100%;
+}
+
+.recipe-title {
+  font-size: 2em;
+  margin: 0.5em 0;
+  text-align: center;
+}
+
+.btns-section {
+  margin: 0.5em auto;
+  text-align: center;
+}
+
+.btns-section button {
+  background: none;
+  border: 1px solid black;
+  border-radius: 10%;
+  margin: 0 0.5em;
+  padding: 0.3em;
+}
+
+.recipe-category {
+  font-size: 1.7em;
+  margin: 0.5em auto;
+  text-align: center;
+}
+
+.ingredients-section {
+  background-color: rgba(165, 161, 168, 0.397);
+  border-radius: 10%;
+  display: flex;
+  flex-direction: column;
+  margin: 1em auto;
+  padding: 0.4em;
+}
+
+.ingredients-section h3 {
+  font-size: 1.5em;
+  text-align: center;
+}
+
+.ingredients-checkbox-list {
+  margin: auto;
+  text-align: left;
+  width: 80%;
+}
+
+.ingredients-checkbox-list input {
+  margin-right: 0.4em;
+}
+
+.recipe-instructions {
+  background-color: rgba(211, 179, 76, 0.377);
+  border-radius: 10%;
+  margin: 1em 0;
+  padding: 0.4em;
+}
+
+.recipe-instructions h3 {
+  font-size: 1.5em;
+  text-align: center;
+}
+
+.recipe-instructions p {
+  text-align: justify;
+}
+
+iframe {
+  display: block;
+  margin: 1em auto;
+}
+
+.finish-recipe-btn {
+  bottom: 0;
+  height: 65px;
+  position: fixed;
+  width: 96%;
+}

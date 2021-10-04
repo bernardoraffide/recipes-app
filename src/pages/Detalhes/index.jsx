@@ -87,7 +87,13 @@ function Detalhes() {
       );
     } if (inProgress[id]) {
       return (
-        <StartOrContinueButton buttonDescription="Continuar Receita" />
+        <StartOrContinueButton
+          onClick={ () => {
+            handleInProgress(path, id, ingredients);
+            history.push(`/${path}/${id}/in-progress`);
+          } }
+          buttonDescription="Continuar Receita"
+        />
       );
     }
     return null;
