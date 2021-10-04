@@ -91,7 +91,7 @@ function ReceitasFeitas() {
             <button
               type="button"
               onClick={ () => {
-                copy(`http://localhost:3000/${recipe.type === 'comidas' ? 'comidas' : 'bebidas'}/${recipe.id}`);
+                copy(`http://localhost:3000/${recipe.type === 'comida' ? 'comidas' : 'bebidas'}/${recipe.id}`);
                 setIsCopied(true);
               } }
             >
