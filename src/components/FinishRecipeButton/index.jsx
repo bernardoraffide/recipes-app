@@ -2,6 +2,8 @@ import React from 'react';
 import { useHistory } from 'react-router';
 import PropTypes from 'prop-types';
 
+import { Button } from 'react-bootstrap';
+
 function FinishRecipeButton({ enableBtn, recipe, type, handleFinished }) {
   const history = useHistory();
 
@@ -11,14 +13,15 @@ function FinishRecipeButton({ enableBtn, recipe, type, handleFinished }) {
   };
 
   return (
-    <button
-      type="button"
+    <Button
+      className="finish-recipe-btn"
+      variant="warning"
       data-testid="finish-recipe-btn"
       disabled={ enableBtn }
       onClick={ () => handleClick(type, recipe) }
     >
       Finalizar Receita
-    </button>
+    </Button>
   );
 }
 
