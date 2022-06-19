@@ -35,6 +35,7 @@ function Login({ history }) {
           type="text"
           id="email-input"
           name="email"
+          placeholder="email"
           value={ email }
           onChange={ ({ target }) => {
             handleEmail(target.value);
@@ -45,6 +46,7 @@ function Login({ history }) {
           type="password"
           id="password-input"
           name="password"
+          placeholder="password"
           value={ password }
           onChange={ ({ target }) => {
             setPassword(target.value);
