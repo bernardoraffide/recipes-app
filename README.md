@@ -27,7 +27,7 @@ The idea is that the user execute a login and enjoy a simple Recipes app, where 
 
   - This is a Group Project, and the members include:
 
-  (GitHub links below the names)
+    (GitHub links after names)
 
    - Alan Moreira de Freitas
     https://github.com/alanmdf
